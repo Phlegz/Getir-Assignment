@@ -13,7 +13,7 @@ async function getMongoConnection () {
       config.mongodbConnections, 
     )
     return connection;
-  } catch(error) {
+  } catch(err) {
       console.log('Error in establishing a connection to Mongo server');
   }
 }

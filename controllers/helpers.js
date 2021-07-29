@@ -11,7 +11,7 @@ async function getConnection() {
     }
     return { db: client.db(config.mongoDbName).collection('records') };
   } catch (err) {
-    console.log('error', err)
+    console.log('MongoDb connection error', err);
     return false;
   }
 }
