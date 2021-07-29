@@ -4,8 +4,8 @@ const { getConnection } = require('./helpers');
 async function getRecords(req, res) {
   const params = req.body;
   const { db } = await getConnection();
-  
-  const records = await db.aggregate([
+
+  const records = await db.collection('records').aggregate([
     { //First aggregation pipeline stage.
       $project: { //Use $project to Pass along the documents with the requested fields to the next stage in the pipeline.
         //Set the field to 0 to exclude and to 1 to include in the document.

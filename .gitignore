@@ -3,3 +3,4 @@
 
 #misc
 .env.development
+.env.test
