@@ -1,4 +1,4 @@
-const { getMongoConnection } = require('../data/mongoConnector');
+const { getMongoConnection } = require('../data/mongoDbConnector');
 const config = require('../config');
 
 //***************************************** Helper functions ************************************************//
@@ -9,7 +9,7 @@ async function getConnection() {
     if (!client) {
       client = await getMongoConnection();
     }
-    return { db: client.db(config.mongoDbName).collection('records') };
+    return { db: client.db(config.mongoDbName)};
   } catch (err) {
     console.log('MongoDb connection error', err);
     return false;
